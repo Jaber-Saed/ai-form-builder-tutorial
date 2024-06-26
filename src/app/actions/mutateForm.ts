@@ -17,6 +17,7 @@ export async function saveForm(data: SaveFormData) {
   const { name, description, questions } = data;
   const session = await auth();
   const userId = session?.user?.id;
+  const Suuuuuuuuuuuu = 'Suuuuuuuuuuuu'
 
   const newForm = await db
     .insert(forms)
@@ -57,9 +58,11 @@ export async function saveForm(data: SaveFormData) {
     }
   });
 
+   console.log('🟢Suuuuuuuuuuuu', Suuuuuuuuuuuu);
   return formId;
 }
 
 export async function publishForm(formId: number) {
   await db.update(forms).set({ published: true }).where(eq(forms.id, formId));
 }
+
